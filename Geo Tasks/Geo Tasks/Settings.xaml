@@ -1,0 +1,61 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Geo_Tasks.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True"
+    ApplicationBar="{StaticResource AppBar}">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Geo Tasks" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Settings" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0">
+            <Slider Height="115" HorizontalAlignment="Left" Margin="44,14,0,0" Name="sliderLoopDistance" VerticalAlignment="Top" Width="406" Value="500" SmallChange="10" Minimum="10" Maximum="10000" LargeChange="100" VerticalContentAlignment="Stretch" Opacity="0.8" />
+            <TextBlock Height="35" HorizontalAlignment="Left" Margin="11,14,0,0" Name="txtSettings" Text="Range of Coverage" VerticalAlignment="Top" Width="196" FontWeight="Bold" />
+            <TextBlock Height="35" HorizontalAlignment="Left" Margin="11,497,0,0" Name="txtNotifications" Text="Notifications" VerticalAlignment="Top" Width="176" />
+            <TextBlock Height="35" HorizontalAlignment="Left" Margin="12,389,0,0" Name="txtClearTasks" Text="Clear All Tasks" VerticalAlignment="Top" Width="176" />
+            <TextBlock Height="35" HorizontalAlignment="Left" Margin="11,442,0,0" Name="txtBackGround" Text="Background Task" VerticalAlignment="Top" Width="176" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="324,61,0,0" Name="txtLoopSize" Text="0m" VerticalAlignment="Top" Width="116" TextAlignment="Right" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="308,14,0,0" Name="textBlock1" Text="500m-10,000m" VerticalAlignment="Top" Width="204" />
+            <TextBlock FontWeight="Bold" Height="35" HorizontalAlignment="Left" Margin="10,113,0,0" Name="textBlock2" Text="Map Zoom Level" VerticalAlignment="Top" Width="196" />
+            <TextBlock Height="30" HorizontalAlignment="Right" Margin="0,113,-12,0" Name="textBlock3" Text="Valid: 1-19" VerticalAlignment="Top" Width="160" />
+            <Slider Height="115" HorizontalAlignment="Left" LargeChange="5" Margin="44,113,0,0" Maximum="19" Minimum="1" Name="SliderZoomLevel" Opacity="0.8" SmallChange="1" Value="15" VerticalAlignment="Top" VerticalContentAlignment="Stretch" Width="406" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="324,167,0,0" Name="txtZoomLevel" Text="15" TextAlignment="Right" VerticalAlignment="Top" Width="116" />
+            <TextBlock FontWeight="Bold" Height="35" HorizontalAlignment="Left" Margin="12,220,0,0" Name="textBlock4" Text="Positioning Accuracy High" VerticalAlignment="Top" Width="196" />
+            <CheckBox Content="CheckBox" Height="63" HorizontalAlignment="Left" Margin="214,210,0,0" Name="ChkBxPositioningAccuracy" VerticalAlignment="Top" Width="52" IsChecked="True" />
+            <TextBlock Height="57" HorizontalAlignment="Right" Margin="0,216,6,0" Name="textBlock5" Text="Default (Unchecked) High (Checked)" VerticalAlignment="Top" Width="198" TextWrapping="Wrap" TextAlignment="Right" Opacity="0.8" FontStyle="Italic" FontWeight="Light" FontSize="18" />
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

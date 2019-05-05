@@ -1,0 +1,54 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="GeoTasks.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" DataContext="{Binding}" xmlns:my="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps" Opacity="1" >
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="giGABits" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="GeoTasks" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <my:Map Height="510" HorizontalAlignment="Left" Margin="6,6,0,0" Name="MyMap" VerticalAlignment="Top" Width="462" CredentialsProvider="Aj6Ep9UV4CIAN89cdYhsunvwtsIqIRN5MlZGLMWGJoxSKNVrhPLdpNHH2ed31LZU" />
+            <TextBox HorizontalAlignment="Left" Margin="6,517,0,33" Name="txtLocationPopUp" Text="TextBox" Width="449" FontSize="12" />
+            <TextBox Height="72" Margin="84,18,0,0" Name="txtNewTask" Text="Task Details Here" VerticalAlignment="Top" Opacity="1" FontSize="20" KeyDown="txtNewTask_KeyDown" HorizontalAlignment="Left" Width="264" Visibility="Collapsed" />
+            <Button Content="X" Height="56" HorizontalAlignment="Left" Margin="335,28,0,0" Name="btnCancel" VerticalAlignment="Top" Width="61" FontSize="16" Visibility="Collapsed" />
+            <Button Content="+" Height="57" HorizontalAlignment="Left" Margin="7,554,0,0" Name="btnNewTask" VerticalAlignment="Top" Width="60" FontSize="16" Click="btnNewTask_Click" />
+            <Button Content="Show All" Height="53" HorizontalAlignment="Left" Margin="58,558,0,0" Name="btnShowAll" VerticalAlignment="Top" Width="114" FontSize="14" Click="btnShowAll_Click" />
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="1">
+            <shell:ApplicationBarIconButton IconUri="appbar_add_icon.png" Text="Add New" x:Name="BtnNewTask" Click="BtnNewTask_Click" />
+            <shell:ApplicationBarIconButton IconUri="appbar_info_icon.png" Text="Show All" x:Name="BtnShowAll" Click="BtnShowAll_Click" />
+            <shell:ApplicationBarIconButton IconUri="appbar_info_icon.png" Text="Save" x:Name="BtnSave" Click="BtnSave_Click" />
+            <shell:ApplicationBarIconButton IconUri="appbar_info_icon.png" Text="Cancel" x:Name="BtnCancel" Click="BtnCancel_Click" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Settings Page"/>
+                <shell:ApplicationBarMenuItem Text="Other"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
